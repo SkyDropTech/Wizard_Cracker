@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rounded Center Header</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0C0C0C;
+      font-family: Arial, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Rounded Header */
+    .header {
+      width: 960px;
+      height: 75px;
+      border-radius: 100px;
+      background: linear-gradient(90deg, #A7AAB6 0%, #A7B0D3 49.3%, #7D93EA 100%);
+      margin: 40px auto 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Icons inside header */
+    .header img,
+    .header i {
+      width: 55px;
+      height: 55px;
+      cursor: pointer;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .header i {
+      font-size: 40px;
+      color: black;
+    }
+
+    .header img {
+      border-radius: 50%;
+    }
+
+    .header i:hover,
+    .header img:hover {
+      transform: scale(1.2);
+      color: #222;
+    }
+
+    /* Profile circle (top-right) */
+    .profile {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 90px;
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      transition: transform 0.2s ease;
+    }
+
+    .profile svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .profile:hover {
+      transform: scale(1.05);
+    }
+
+    /* Title container */
+    .title {
+      width: 2417px;
+      height: 1284px;
+      flex-shrink: 0;
+      text-align: center;
+      margin: 60px auto 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Background glow effect behind center image */
+    .wizard-effect-bg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1042px;
+      height: 811px;
+      border-radius: 1042px;
+      background: rgba(255, 255, 255, 0.14);
+      filter: blur(232.55px);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Center wizard cracker image */
+    .side-mid {
+      display: block;
+      margin: 0 auto;
+      width: 2417px;
+      height: 1284px;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+      max-width: 70vw;
+      max-height: 60vh;
+    }
+
+    /* Left image (GTA5 Mical) */
+    .side-image-left {
+      position: absolute;
+      left: 30px;
+      bottom: 200px;
+      width: 511px;
+      height: 843px;
+      aspect-ratio: 511/843;
+      object-fit: contain;
+      z-index: 4;
+    }
+
+    /* Right image (Spiderman) */
+    .side-image-right {
+      position: absolute;
+      right: -180px;
+      bottom: 150px;
+      width: 920px;
+      height: 920px;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      z-index: 5;
+    }
+
+    /* Blue blob effect (left) */
+    .blue-effect-left {
+      position: absolute;
+      top: 160px;
+      left: -80px;
+      width: 354px;
+      height: 277px;
+      border-radius: 354px;
+      background: rgba(41, 104, 222, 0.46);
+      filter: blur(232.55px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Effect blob behind Spiderman */
+    .effect-spiderman {
+      position: absolute;
+      right: 60px;
+      bottom: 60px;
+      width: 407px;
+      height: 414px;
+      border-radius: 414px;
+      border: 1px solid #000;
+      background: rgba(96, 126, 181, 0.66);
+      filter: blur(120.6px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Join button */
+    .join-btn {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 38px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 199px;
+background: linear-gradient(90deg, #6EAB45 0%, #40771C 100%);
+      border: none;
+      
+      padding: 15px 45px;
+      margin: 20px auto 0 auto;
+      outline: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 4px 18px rgba(38, 218, 59, 0.24);
+      z-index: 10;
+    }
+
+    .join-btn:hover {
+      background: #34A32C;
+    }
+
+    /* Subtext */
+    .subtext {
+      text-align: center;
+      font-family: "Creepster Caps";
+      font-size: 34px;
+      color: #B7C6F7;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-top: 2vw;
+      z-index: 2;
+    }
+  </style>
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/9e5b5d5d3f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Rounded Header -->
+  <div class="header">
+    <i class="fas fa-home"></i>
+    <img src="https://i.imgur.com/O6Z4xRq.png" alt="Angry Bird" />
+    <i class="fas fa-gamepad"></i>
+    <i class="fas fa-headset"></i>
+  </div>
+
+  <!-- Profile circle top-right -->
+  <div class="profile">
+    <svg xmlns="http://www.w3.org/2000/svg" width="106" height="101" viewBox="0 0 106 101" fill="none">
+      <ellipse cx="53" cy="50.5" rx="53" ry="50.5" fill="#C8D3FF" />
+    </svg>
+  </div>
+
+  <!-- Glow and blobs -->
+  <div class="blue-effect-left"></div>
+  <div class="effect-spiderman"></div>
+
+  <!-- Main title section -->
+  <div class="title">
+    <div class="wizard-effect-bg"></div>
+    <img src="images/imagelogo.png" alt="Wizard Cracker" class="side-mid" />
+  </div>
+
+  <!-- Subheading -->
+  <div class="subtext">GET ANY GAME FOR 1S ONLY</div>
+
+  <!-- Join button -->
+  <button class="join-btn">JOIN US</button>
+
+  <!-- Left image -->
+  <img src="images/gta5_mical.png" alt="GTA5 Mical" class="side-image-left" />
+
+  <!-- Right image -->
+  <img src="images/spiderman.png" alt="Spiderman" class="side-image-right" />
+</body>
+</html>
